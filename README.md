@@ -50,7 +50,7 @@ Oldenburg dataset is provided for testing.
    ```
    '>0' is a fixed string denoting the start of a trajectory.
 
-  We have added a function in the './LDPTrace/code/' folder called, transformdataset.py for transforming the .dat into the required format specified above for the implementatiom.
+  We have added a function in the '[./LDPTrace/code/]()' folder called, transformdataset.py for transforming the .dat into the required format specified above for the implementatiom.
 
   If, the dataset is not in the above format, You can run the fuction after modifying the dataset file path to obtain the dataset with proper format.
   
@@ -84,8 +84,6 @@ The running parameters include:
 
 + --dataset: 
   + 'oldenburg': for Oldenburg dataset
-  + 'porto': for Porto dataset
-  + 'campus': for Campus dataset
 + --epsilon: privacy budget
 + --grid_num: grid granularity `N`, the spatial map will be decomposed into `N x N` grids. Based on the theoretical analysis in our paper, we recommend `N=6` for Oldenburg, Porto and Campus dataset.
 + --max_len: quantile of estimated max length, the default setting is 0.9
