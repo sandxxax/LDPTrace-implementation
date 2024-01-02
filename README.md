@@ -124,7 +124,7 @@ credits @ "https://github.com/zealscott/LDPTrace"
 contributors :
   1. Sandhya V : contact me @[mail-me](vsandhya912@gmail.com) and [Github-link](https://github.com/sandxxax/)
   2. Arun Ashok Badri : contact me @[mail-me](iamarunbadri@gmail.com) and [Github-link](https://github.com/0hex7/)
-  3. PavanKumar J : contact me @[mail-me](pavankumarj.cy@gmail.com) and [Github-link](https://github.com/lonelyphoenix/)
+  3. PavanKumar J : contact me @[mail-me](pavankumarj.cy@gmail.com) and [Github-link](https://github.com/lonelypheonix/)
 
 
 
