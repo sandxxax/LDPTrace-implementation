@@ -80,8 +80,13 @@ Please make sure the data file is in ``./LDPTrace/data/`` dictionary, and its in
 
 Here's an example of running LDPTrace:
 
+With the below command, you are running the main function with a few arguements. NOTE: --re_syn must be given, if dataset is not pre-configured already.!
 ```python
 python main.py --dataset oldenburg --grid_num 6 --max_len 0.9 --epsilon 1.0 --re_syn --multiprocessing
+```
+or, you can also try the following command, as oldenburg is the default dataset for the main function.!
+```python
+python main.py
 ```
 
 LDPTrace will save the synthesized database in ``./LDPTrace/data/DATASET_NAME/`` and output the Evaluation/Experiment metrics.
