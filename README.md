@@ -119,7 +119,12 @@ Any scientific publications that use the datasets/codes of the above specified p
   year      = {2023}
 }
 ```
+credits @ "https://github.com/zealscott/LDPTrace"
 
+contributors :
+  1. Sandhya V : @ [Githublink](https://github.com/sandxxax/)
+  2. Arun Ashok Badri : @ [Githublink](https://github.com/0hex7/)
+  3. PavanKumar J : @ [Githublink](https://github.com/sandxxax/)
 
 
 
