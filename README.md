@@ -102,7 +102,7 @@ The running parameters include:
 
 ## Acknowledgement
 
-Any scientific publications that use the datasets/codes of the above specified paper should cite the paper as per the reference:
+Any scientific publications that use the datasets/codes of the above specified paper should cite the original paper as per the reference:
 
 ```
 @inproceedings{LDPTrace,
@@ -119,9 +119,8 @@ Any scientific publications that use the datasets/codes of the above specified p
   year      = {2023}
 }
 ```
-credits @ "https://github.com/zealscott/LDPTrace"
 
-contributors :
+## contributors :
   1. Sandhya V : contact me @[mail-me](vsandhya912@gmail.com) and [Github-link](https://github.com/sandxxax/)
   2. Arun Ashok Badri : contact me @[mail-me](iamarunbadri@gmail.com) and [Github-link](https://github.com/0hex7/)
   3. PavanKumar J : contact me @[mail-me](pavankumarj.cy@gmail.com) and [Github-link](https://github.com/lonelypheonix/)
