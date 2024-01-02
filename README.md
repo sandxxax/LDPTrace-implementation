@@ -50,7 +50,7 @@ Oldenburg dataset is provided for testing.
    ```
    '>0' is a fixed string denoting the start of a trajectory.
 
-  We have added a function in the '[./LDPTrace/code/]()' folder called, transformdataset.py for transforming the .dat into the required format specified above for the implementatiom.
+  We have added a function in the `./LDPTrace/code/`  folder called, transformdataset.py for transforming the .dat into the required format specified above for the implementatiom.
 
   If, the dataset is not in the above format, You can run the fuction after modifying the dataset file path to obtain the dataset with proper format.
   
