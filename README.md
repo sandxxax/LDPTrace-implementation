@@ -18,7 +18,7 @@ This is the Python implementation for the paper: [LDPTrace](https://www.vldb.org
 
 ## 2. Dataset
 
-### a. Dataset Statistics
+### I. Dataset Statistics
 
 The experiment was conducted on the oldenberg trajectory datasets. The overall statistics are listed below:
 
@@ -29,7 +29,7 @@ The experiment was conducted on the oldenberg trajectory datasets. The overall s
 
 Oldenburg dataset is provided for testing.
 
-### b. Oldenburg
+### II. Oldenburg
 
 * Oldenburg is a synthetic dataset simulated by Brinkhoff's network-based moving objects generator. It is based on the map of Oldenburg city, Germany.
 
@@ -129,7 +129,7 @@ Any scientific publications that use the datasets/codes of the above specified p
 }
 ```
 
-## 6. contributors :
+## 6. Contributors :
   1. Sandhya V : contact me @[mail-me](vsandhya912@gmail.com) and [Github-link](https://github.com/sandxxax/)
   2. Arun Ashok Badri : contact me @[mail-me](iamarunbadri@gmail.com) and [Github-link](https://github.com/0hex7/)
   3. PavanKumar J : contact me @[mail-me](pavankumarj.cy@gmail.com) and [Github-link](https://github.com/lonelypheonix/)
