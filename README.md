@@ -1,7 +1,7 @@
 # LDPTrace-implementation
 This repository implements the LDPTrace- a tool which helps with Local Differential Privacy for Trajectories.
 
-This is the Python implementation for the paper:
+This is the Python implementation for the paper: [LDP-Trace](https://www.vldb.org/pvldb/vol16/p1897-gao.pdf)
 
 > Yuntao Du, Yujia Hu, Zhikun Zhang, Ziquan Fang, Lu Chen, Baihua Zheng and Yunjun Gao (2023). LDPTrace: Locally Differentially Private Trajectory Synthesis.  Paper in [arXiv](https://arxiv.org/abs/2302.06180) or [PVLDB](https://www.vldb.org/pvldb/vol16/p1897-gao.pdf). In VLDB'23, Vancouver, Canada, August 28 to September 1, 2023.
 
