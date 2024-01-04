@@ -1,22 +1,24 @@
 # LDPTrace-implementation
-This repository implements the LDPTrace- a tool which helps with Local Differential Privacy for Trajectories.
 
-This is the Python implementation for the paper: [LDP-Trace](https://www.vldb.org/pvldb/vol16/p1897-gao.pdf)
+This repository implements the LDPTrace - a tool which helps with Local Differential Privacy for Trajectories.
+
+This is the Python implementation for the paper: [LDPTrace](https://www.vldb.org/pvldb/vol16/p1897-gao.pdf)
 
 > Yuntao Du, Yujia Hu, Zhikun Zhang, Ziquan Fang, Lu Chen, Baihua Zheng and Yunjun Gao (2023). LDPTrace: Locally Differentially Private Trajectory Synthesis.  Paper in [arXiv](https://arxiv.org/abs/2302.06180) or [PVLDB](https://www.vldb.org/pvldb/vol16/p1897-gao.pdf). In VLDB'23, Vancouver, Canada, August 28 to September 1, 2023.
 
-See the official notes by the authors [blog](https://research.zealscott.com/blog/2023/04/22/LDPTrace/) for the introduction to this work.
+> See the official notes by the authors [blog](https://research.zealscott.com/blog/2023/04/22/LDPTrace/) for the introduction to this work.
 
-## Environment Requirements
+
+## 1. Environment Requirements
 
 - Ubuntu OS
 - Python >= 3.8 (Anaconda3 is recommended)
 - numpy == 1.21.4
 
 
-## Dataset
+## 2. Dataset
 
-### Dataset Statistics
+### a. Dataset Statistics
 
 The experiment was conducted on the oldenberg trajectory datasets. The overall statistics are listed below:
 
@@ -27,7 +29,7 @@ The experiment was conducted on the oldenberg trajectory datasets. The overall s
 
 Oldenburg dataset is provided for testing.
 
-### Oldenburg
+### b. Oldenburg
 
 * Oldenburg is a synthetic dataset simulated by Brinkhoff's network-based moving objects generator. It is based on the map of Oldenburg city, Germany.
 
@@ -74,7 +76,7 @@ Oldenburg dataset is provided for testing.
 * Always locate the dataset into `./LDPTrace/data/` dictionary.
 
 
-##  Implementation and Reproducing the results
+##  3. Implementation and Reproducing the results
 
 Please make sure the data file is in ``./LDPTrace/data/`` dictionary, and its in .dat format, and also its in the above specified format!
 
@@ -93,7 +95,7 @@ python main.py
 
 LDPTrace will save the synthesized database in ``./LDPTrace/data/DATASET_NAME/`` and output the Evaluation/Experiment metrics.
 
-## Configurations
+## 4. Configurations
 
 The running parameters include:
 
@@ -107,7 +109,7 @@ The running parameters include:
 + --re_syn: whether to re-synthesize the database. If this parameter is not set, LDPTrace will try to read the saved databased that is synthesized before.
 + --multiprocessing: whether to use multiprocessing in experiments to improve efficiency.
 
-## Acknowledgement
+## 5. Acknowledgement
 
 Any scientific publications that use the datasets/codes of the above specified paper should cite the original paper as per the reference:
 
@@ -127,7 +129,7 @@ Any scientific publications that use the datasets/codes of the above specified p
 }
 ```
 
-## contributors :
+## 6. contributors :
   1. Sandhya V : contact me @[mail-me](vsandhya912@gmail.com) and [Github-link](https://github.com/sandxxax/)
   2. Arun Ashok Badri : contact me @[mail-me](iamarunbadri@gmail.com) and [Github-link](https://github.com/0hex7/)
   3. PavanKumar J : contact me @[mail-me](pavankumarj.cy@gmail.com) and [Github-link](https://github.com/lonelypheonix/)
