@@ -25,6 +25,6 @@ if __name__ == "__main__":
     transformed_dataset = transform_dataset(original_dataset)
 
     # Save the transformed dataset
-    with open('/LDPTrace-implementation/LDPTrace/LDPTrace/data/oldenburg.dat', 'w') as file:
+    with open('/LDPTrace-implementation/LDPTrace/data/oldenburg.dat', 'w') as file:
         file.write('\n'.join(transformed_dataset))
     print("done")
