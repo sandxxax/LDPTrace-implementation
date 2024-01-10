@@ -14,6 +14,7 @@ import dataset
 import pickle
 import random
 import lzma
+import os
 
 from logger.logger import ConfigParser
 import multiprocessing
@@ -336,6 +337,7 @@ grid_trajectories = convert_raw_to_grid(db)
 if args.re_syn:
     print('\n[*] Synthesized dataset NOT found, creating the corresponding pickle file')
 
+    # Your existing code for estimating max length, updating Markov prob, aggregating, etc.
     length_server, quantile = estimate_max_length(grid_trajectories, args.epsilon / 10)
     logger.info(f'= Quantile: {quantile}')
 
@@ -355,11 +357,15 @@ if args.re_syn:
 
     synthetic_trajectories = convert_grid_to_raw(synthetic_database)
 
-    with open(f'../data/{args.dataset}/syn_{args.dataset}_eps_{args.epsilon}_max_{args.max_len}_grid_{args.grid_num}.pkl', 'wb') as f:
+    # Save the synthetic_trajectories to a pickle file
+    pickle_file_path = f'../data/{args.dataset}/syn_{args.dataset}_eps_{args.epsilon}_max_{args.max_len}_grid_{args.grid_num}.pkl'
+    
+    with open(pickle_file_path, 'wb') as f:
         pickle.dump(synthetic_trajectories, f)
 
     synthetic_grid_trajectories = synthetic_database
-    print('\n[+] Pickle file is created and stored for future Synthesizing')
+    print(f'\n[+] Pickle file is created and stored at {pickle_file_path} for future Synthesizing')
+
 
 else:
     try:
