@@ -357,8 +357,12 @@ if args.re_syn:
 
     synthetic_trajectories = convert_grid_to_raw(synthetic_database)
 
+    # Save the synthetic_trajectories to a pickle file    
     # Save the synthetic_trajectories to a pickle file
     pickle_file_path = f'../data/{args.dataset}/syn_{args.dataset}_eps_{args.epsilon}_max_{args.max_len}_grid_{args.grid_num}.pkl'
+    
+    # Ensure the directory exists, create it if not
+    os.makedirs(os.path.dirname(pickle_file_path), exist_ok=True)
     
     with open(pickle_file_path, 'wb') as f:
         pickle.dump(synthetic_trajectories, f)
