@@ -306,7 +306,7 @@ def get_real_density(grid_db: List[List[Grid]]):
 
 
 print('\n')
-print(f'+++ Reading {args.dataset} dataset...\n')
+print(f'\n[+] Reading {args.dataset} dataset...\n')
 if args.dataset == 'oldenburg':
     db = dataset.read_brinkhoff(args.dataset)
 elif args.dataset == 'porto':
@@ -330,11 +330,11 @@ grid_map = GridMap(args.grid_num,
                    stats['max_x'],
                    stats['max_y'])
 
-print('\n+++ Converting raw trajectories to grids\n')
+print('\n[+] Converting raw trajectories to grids\n')
 grid_trajectories = convert_raw_to_grid(db)
 
 if args.re_syn:
-    print('+++ Synthesized dataset NOT found, creating the corresponding pickle file')
+    print('\n[*] Synthesized dataset NOT found, creating the corresponding pickle file')
 
     length_server, quantile = estimate_max_length(grid_trajectories, args.epsilon / 10)
     logger.info(f'= Quantile: {quantile}')
@@ -359,17 +359,17 @@ if args.re_syn:
         pickle.dump(synthetic_trajectories, f)
 
     synthetic_grid_trajectories = synthetic_database
-    print('\n+++ Pickle file is created and stored for future Synthesizing')
+    print('\n[+] Pickle file is created and stored for future Synthesizing')
 
 else:
     try:
-        print('+++ Synthesized dataset found, Using this datset for Synthesizing once again.. ')
+        print('\n[+] Synthesized dataset found, Using this datset for Synthesizing once again.. ')
         with open(f'../data/{args.dataset}/syn_{args.dataset}_eps_{args.epsilon}_max_{args.max_len}_grid_{args.grid_num}.pkl',
                   'rb') as f:
             synthetic_trajectories = pickle.load(f)
         synthetic_grid_trajectories = convert_raw_to_grid(synthetic_trajectories)
     except FileNotFoundError:
-        print('--- Synthesized file not found! Use --re_syn, Exiting.. \n')
+        print('\n[-] Synthesized file not found! Use --re_syn, Exiting.. \n')
         exit()
 
 orig_trajectories = db
@@ -380,7 +380,7 @@ orig_sampled_trajectories = convert_grid_to_raw(orig_grid_trajectories)
 np.random.seed(2022)
 random.seed(2022)
 
-print("\n+++ CONDUCTING VARIOUS EXPERIMENTS ON THE SYNTHESIZED DATASET")
+print("\n[+] CONDUCTING VARIOUS EXPERIMENTS ON THE SYNTHESIZED DATASET")
 print('\n1. Experiment: Density Error')
 orig_density = get_real_density(orig_grid_trajectories)
 syn_density = get_real_density(synthetic_grid_trajectories)
@@ -440,5 +440,5 @@ pattern_support_error = experiment.calculate_pattern_support(orig_pattern, syn_p
 
 print(f'Pattern F1 error calculated is: {pattern_f1_error}')
 print(f'Pattern support error for the Synthesized dataset is: {pattern_support_error}\n')
-logger.info("=   The Experiments were conducted successfully, Exiting...\n")
+logger.info("\n[+] The Experiments were conducted successfully, Exiting...\n")
 
