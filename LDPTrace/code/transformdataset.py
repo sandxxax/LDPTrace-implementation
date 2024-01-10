@@ -18,13 +18,13 @@ def transform_dataset(original_dataset):
 
 if __name__ == "__main__":
     # Read the original dataset
-    with open('C:/Users/iamar/Desktop/Internship/LDPTrace/LDPTrace/data/original_oldenburg.dat', 'r') as file:
+    with open('/LDPTrace-implementation/LDPTrace/data/original_oldenburg.dat', 'r') as file:
         original_dataset = file.readlines()
 
     # Transform the dataset
     transformed_dataset = transform_dataset(original_dataset)
 
     # Save the transformed dataset
-    with open('C:/Users/iamar/Desktop/Internship/LDPTrace/LDPTrace/data/oldenburg.dat', 'w') as file:
+    with open('/LDPTrace-implementation/LDPTrace/LDPTrace/data/oldenburg.dat', 'w') as file:
         file.write('\n'.join(transformed_dataset))
     print("done")
