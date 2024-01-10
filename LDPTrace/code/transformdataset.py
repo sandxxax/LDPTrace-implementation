@@ -18,6 +18,8 @@ def transform_dataset(original_dataset):
 
 if __name__ == "__main__":
     # Read the original dataset
+    print("\n[*] Datset has been loaded for preprocessing..")
+
     with open('/LDPTrace-implementation/LDPTrace/data/original_oldenburg.dat', 'r') as file:
         original_dataset = file.readlines()
 
@@ -27,4 +29,4 @@ if __name__ == "__main__":
     # Save the transformed dataset
     with open('/LDPTrace-implementation/LDPTrace/data/oldenburg.dat', 'w') as file:
         file.write('\n'.join(transformed_dataset))
-    print("\n[+] The dataset was processed and stored as : /LDPTrace-implementation/LDPTrace/data/oldenburg.dat")
+    print("\n[+] The dataset was processed and stored as : /LDPTrace-implementation/LDPTrace/data/oldenburg.dat\n")
