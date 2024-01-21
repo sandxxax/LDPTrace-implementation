@@ -312,7 +312,7 @@ print(f'\n[+] Reading {args.dataset} dataset...\n')
 if args.dataset == 'oldenburg':
     db = dataset.read_brinkhoff(args.dataset)
 elif args.dataset == 'porto':
-    csv_path = '../data/proto.csv'
+    csv_path = '../data/porto.csv'
     db = pd.read_csv(csv_path, encoding='utf-8')
 elif args.dataset == 'campus':
     csv_path = '../data/campus.csv'
