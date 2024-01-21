@@ -312,8 +312,8 @@ print(f'\n[+] Reading {args.dataset} dataset...\n')
 if args.dataset == 'oldenburg':
     db = dataset.read_brinkhoff(args.dataset)
 elif args.dataset == 'porto':
-    with lzma.open('../data/porto.xz', 'rb') as f:
-        db = pickle.load(f)
+    csv_path = '../data/proto.csv'
+    db = pd.read_csv(csv_path, encoding='utf-8')
 elif args.dataset == 'campus':
     csv_path = '../data/campus.csv'
     db = pd.read_csv(csv_path, encoding='utf-8')
