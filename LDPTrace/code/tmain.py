@@ -311,12 +311,23 @@ print('\n')
 print(f'\n[+] Reading {args.dataset} dataset...\n')
 if args.dataset == 'oldenburg':
     db = dataset.read_brinkhoff(args.dataset)
-elif args.dataset == 'porto':
-    csv_path = '../data/porto.csv'
-    db = pd.read_csv(csv_path, encoding='utf-8')
-elif args.dataset == 'campus':
-    csv_path = '../data/campus.csv'
-    db = pd.read_csv(csv_path, encoding='utf-8')
+elif args.dataset in ['porto', 'campus']:
+    # Load the dataset based on the selected dataset name
+    csv_path = f'../data/{args.dataset}.csv'
+
+    # Check if the dataset file exists
+    if not os.path.isfile(csv_path):
+        print(f"Error: Dataset file '{csv_path}' not found.")
+        exit()
+
+    # Assuming your dataset has 'latitude' and 'longitude' columns
+    try:
+        # Try loading with utf-8 encoding
+        db = pd.read_csv(csv_path, encoding='utf-8')
+    except UnicodeDecodeError:
+        print("Error decoding the file with utf-8 encoding. Attempting to load with latin1 encoding.")
+        # If utf-8 fails, try loading with latin1 encoding
+        db = pd.read_csv(csv_path, encoding='latin1')
 else:
     logger.info(f'= Invalid dataset: {args.dataset}')
     db = None
@@ -324,7 +335,9 @@ else:
 
 random.shuffle(db)
 
+# Rest of your code remains unchanged
 stats = dataset.dataset_stats(db, f'../data/{args.dataset}_stats.json')
+
 
 grid_map = GridMap(args.grid_num,
                    stats['min_x'],
