@@ -15,6 +15,7 @@ import pickle
 import random
 import lzma
 import os
+import pandas as pd
 
 from logger.logger import ConfigParser
 import multiprocessing
