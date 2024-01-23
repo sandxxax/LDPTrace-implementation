@@ -1,19 +1,31 @@
+
 def transform_dataset(original_dataset):
     transformed_dataset = []
-    trajectory_id = -1  # Initialize the trajectory ID to -1
+
+    print("len(original_dataset) =", len(original_dataset))
+
+    d = dict()
 
     for line in original_dataset:
+        trajectory_id = line.split()[1]
         if line.startswith('newpoint'):
-            trajectory_id += 1  # Increment the trajectory ID for new points
-            transformed_dataset.append(f"#{trajectory_id}:")
-            transformed_dataset.append(f">0: {line.split()[5]},{line.split()[6]}")
+            d[trajectory_id] = [(line.split()[5], line.split()[6])]
         elif line.startswith('point'):
-            transformed_dataset[-1] += f"; {line.split()[5]},{line.split()[6]}"
+            d[trajectory_id].append((line.split()[5], line.split()[6]))
+        elif line.startswith('disappearpoint'):
+            d[trajectory_id].append((line.split()[5], line.split()[6]))
+            transformed_dataset.append(f"#{trajectory_id}:")
+            coords = d.pop(trajectory_id)
+            transformed_dataset.append(f">0: {coords[0][0]}, {coords[0][1]}")
+            for coord in coords[1:]:
+                transformed_dataset[-1] += f"; {coord[0]}, {coord[1]}"
         else:
-            # Handling additional cases if any specific action is required
             pass
 
+    print("len(transformed_dataset) =", len(transformed_dataset)/2)
+
     return transformed_dataset
+
 
 
 if __name__ == "__main__":
